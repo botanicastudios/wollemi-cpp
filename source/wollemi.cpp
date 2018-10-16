@@ -354,37 +354,13 @@ int main(int argc, char* argv[])
                             // push each completed byte into the frame buffer
                             bitmap_frame_buffer[(y * bytes_per_row) + x] =
                                 static_cast<unsigned char>(current_byte);
-                            if (current_byte > 0)
-                            {
-                                printf("bitmap_frame_buffer[%d] = %02x\n", (y * bytes_per_row) + x,
-                                       current_byte);
-                            }
                         }
                     }
 
-                    // unsigned int my_byte = 0;
-
-                    // my_byte = my_byte | 0 << (7 - 0);
-                    // my_byte = my_byte | 0 << (7 - 1);
-                    // my_byte = my_byte | 1 << (7 - 2);
-                    // my_byte = my_byte | 1 << (7 - 3);
-                    // my_byte = my_byte | 0 << (7 - 4);
-                    // my_byte = my_byte | 1 << (7 - 5);
-                    // my_byte = my_byte | 1 << (7 - 6);
-                    // my_byte = my_byte | 1 << (7 - 7);
-
-                    // const unsigned char my_byte_char = reinterpret_cast<unsigned char>(&my_byte);
-                    // char my_byte_char = static_cast<char>(my_byte);
-                    // int* my_byte_int = reinterpret_cast<int*>(&my_byte_char);
-
-                    // printf("\nmy_byte: %d\n", my_byte);
-                    // printf("\nmy_byte: %02x\n", my_byte);
-                    // printf("\nmy_byte_char: %c\n", my_byte_char);
-                    // printf("\nmy_byte_char: %02x\n", my_byte_char);
-                    // printf("\nmy_byte_int: %02x\n", my_byte_int);
-
-                    // printf("bitmap_frame_buffer[0]: %c\n", bitmap_frame_buffer[0]);
-                    printf("bitmap_frame_buffer.data(): %c\n", bitmap_frame_buffer.data());
+                    /*for (int i = 0; i < bitmap_frame_buffer.size(); i++)
+                    {
+                        printf("%02x\n", bitmap_frame_buffer[i]);
+                    }*/
 
                     Epd epd;
                     if (epd.Init() != 0) { printf("e-Paper init failed\n"); }
