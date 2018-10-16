@@ -5,7 +5,7 @@
 CMakeSettings.json
 
 # CMake
-build*/
+#build*/
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
@@ -48,4 +48,3 @@ Testing/
 # Debug files
 *.dSYM/
 *.su
-
